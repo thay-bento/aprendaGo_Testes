@@ -18,5 +18,4 @@ func ExampleAdiciona() {
 	soma := Adiciona(1, 5)
 	fmt.Println(soma)
 	// Output: 6
-
 }
