@@ -10,6 +10,34 @@ func Soma(numeros []int) int {
 	}
 	return soma
 }
+
+func SomaTudo(numerosParaSomar ...[]int) []int {
+	// quantidadeDeNumeros := len(numerosParaSomar)
+	// somas = make([]int, quantidadeDeNumeros)
+
+	// for i, numeros := range numerosParaSomar {
+	// 	somas[i] = Soma(numeros)
+	// }
+	var somas []int
+	for _, numeros := range numerosParaSomar {
+		somas = append(somas, Soma(numeros))
+	}
+	return somas
+}
+
+func SomaTodoOResto(numerosParaSomar ...[]int) []int {
+	var somas []int
+	for _, numeros := range numerosParaSomar {
+		if len(numeros) == 0 {
+			somas = append(somas, 0)
+		} else {
+			final := numeros[1:]
+			somas = append(somas, Soma(final))
+		}
+	}
+	return somas
+}
+
 func main() {
 
 }
